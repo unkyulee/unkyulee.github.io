@@ -1,0 +1,21 @@
+body,
+html {
+  width: 100%;
+  background: #ebebeb;
+  padding: 8px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  margin: 12px 12px 12px 12px;
+}
+
+.card-text {
+  color: gray;
+}
+
+.contact {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
