@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i");
+
 :root {
   --c-highlight: #ffd700;
 }
@@ -11,7 +13,7 @@ html {
   position: relative;
   margin: 0;
   padding: 0;
-  font-family: cursive;
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 
@@ -70,7 +72,6 @@ html {
 }
 
 #work .description {
-  font-size: small;
   padding-top: 12px;
 }
 
