@@ -18,7 +18,13 @@
         <div class="separator"></div>
         <span>INTERNET OF THINGS</span>
         <div class="fill"></div>
-        <img src="./image/down.gif" width="100px" />
+        <img src="./image/down.gif" width="100px" onclick="scrollDown()" />
+        <script>
+            function scrollDown() {
+                var targetElement = document.getElementById('work');
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
         <div class="highlight"></div>
     </section>
     <section id="work">
