@@ -1,21 +1,99 @@
+:root {
+  --c-highlight: #ffd700;
+}
+
 body,
 html {
   width: 100%;
-  background: #ebebeb;
-  padding: 8px;
+  height: 100%;
+  min-height: 100%;
+  background: #313131;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  color: white;
+}
+
+.fill {
+  flex-grow: 1;
+}
+
+#intro {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #1f1f1f;
+  text-align: center;
 }
 
-.card {
-  margin: 12px 12px 12px 12px;
+#intro h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--c-highlight);
 }
 
-.card-text {
-  color: gray;
+#work {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #313131;
 }
 
-.contact {
-  unicode-bidi: bidi-override;
-  direction: rtl;
+.portfolio {
+  padding: 16px;
+  display: flex;
+  flex-flow: column;
+  max-width: 500px;
+  position: relative;
+  margin: 40px 0;
+}
+
+.portfolio .highlight {
+  width: 30px;
+  height: 4px;
+  background: var(--c-highlight);
+  margin-top: 8px;
+}
+
+.portfolio .gray {
+  flex-grow: 1;
+  height: 4px;
+  background: gray;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+#work .description {
+  font-size: small;
+  padding-top: 12px;
+}
+
+.highlight {
+  background-color: var(--c-highlight);
+  height: 8px;
+  width: 100%;
+}
+
+.separator {
+  background-color: white;
+  height: 6px;
+  width: 40px;
+  margin: 12px;
+}
+
+#contact {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #1f1f1f;
+  text-align: center;
 }
