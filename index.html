@@ -3,105 +3,232 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YesBut - Internet Of Things</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+    <title>Un Kyu Lee</title>
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 </head>
 
 <body>
-    <section id="intro">
-        <div class="fill"></div>
-        <img src="./image/logo_small.png" />
-        <h1 class="title">
-            YesBut
-        </h1>
-        <div class="separator"></div>
-        <span>INTERNET OF THINGS</span>
-        <div class="fill"></div>
-        <img src="./image/down.gif" width="100px" onclick="scrollDown()" />
-        <script>
-            function scrollDown() {
-                var targetElement = document.getElementById('work');
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+    <header class="hero">
+        <div class="hero__inner">
+            <p class="eyebrow">TIMELINE</p>
+            <h1>UN KYU LEE</h1>
+            <p class="lede">
+                A curated walk through the objects I've designed over the years. Tap any piece to explore its story,
+                creation notes, and videos from the making process.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section
+            class="gallery"
+            id="gallery"
+        >
+            <div class="gallery__timeline-label">2024 → 2025</div>
+            <div
+                class="gallery__grid"
+                id="galleryGrid"
+            ></div>
+        </section>
+    </main>
+
+    <section
+        class="footer"
+        id="contact"
+    >
+        <div>
+            <p class="eyebrow">Contact</p>
+            <p class="lede">Un Kyu Lee · <a href="mailto:unkyulee@gmail.com">unkyulee@gmail.com</a></p>
+        </div>
+    </section>
+
+    <div
+        class="modal"
+        id="detailModal"
+        aria-hidden="true"
+    >
+        <div
+            class="modal__backdrop"
+            data-close
+        ></div>
+        <div class="modal__content">
+            <button
+                class="modal__close"
+                type="button"
+                data-close
+            >&times;</button>
+            <img
+                class="modal__image"
+                id="modalImage"
+                alt=""
+            >
+            <div class="modal__body">
+                <p
+                    class="modal__date"
+                    id="modalDate"
+                ></p>
+                <h3 id="modalTitle"></h3>
+                <div class="modal__links">
+                    <a
+                        id="modalPage"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >Open project page</a>
+                    <a
+                        id="modalYoutube"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >Watch on YouTube</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pieces = [
+            {
+                title: 'The Clock Project',
+                date: '2025-12-06',
+                image: './image/clock.001.jpg',
+                page: 'https://github.com/unkyulee/esp32-clock',
+                youtube: null
+            },
+            {
+                title: 'Rev.2.1 CyberDeck',
+                date: '2025-11-11',
+                image: './image/rev.2.1.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-2.1/readme.md',
+                youtube: 'https://www.youtube.com/watch?v=-P8MK0iT04k'
+            },
+            {
+                title: 'AlphaSmart Neo2 Desktop TypeWriter',
+                date: '2025-09-26',
+                image: './image/neo2.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-neo2/readme.md',
+                youtube: 'https://www.youtube.com/watch?v=ckPTIjm1Qb4'
+            },
+            {
+                title: 'Rev.4 Captain Hook',
+                date: '2025-07-26',
+                image: './image/rev.4.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-4-revamp/readme.md',
+                youtube: 'https://www.youtube.com/watch?v=C-KRcLu5P9o'
+            },
+            {
+                title: 'AlphaSmart Neo2 Desktop TypeWriter',
+                date: '2025-09-26',
+                image: './image/neo2.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-neo2/readme.md',
+                youtube: 'https://www.youtube.com/watch?v=ckPTIjm1Qb4'
+            },
+            {
+                title: 'Steam Deck Enclosure Mod',
+                date: '2025-03-14',
+                image: './image/steamdeck.001.webp',
+                page: 'https://github.com/unkyulee/steamdeck-enclosure',
+                youtube: null
+            },
+            {
+                title: 'Rev.7 Kindred Gift',
+                date: '2025-01-30',
+                image: './image/rev.7.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-7-e-ink/readme.md',
+                youtube: 'https://youtu.be/lNPzFL1a6mI'
+            },
+            {
+                title: 'Rev.2 Mother of Twins',
+                date: '2024-09-17',
+                image: './image/rev.2.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-2-revamp/readme.md',
+                youtube: 'https://youtu.be/IFmGwKtGXtQ'
+            },
+            {
+                title: 'Rev.6 Vivian in New York',
+                date: '2024-06-13',
+                image: './image/rev.6.001.png',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-6-one-piece/readme.md',
+                youtube: 'https://youtu.be/1ZP9wwYMaMY'
+            },
+            {
+                title: 'Rev.5 A Personal Journey',
+                date: '2024-04-18',
+                image: './image/rev.5.001.jpg',
+                page: 'https://github.com/unkyulee/micro-journal/blob/main/micro-journal-rev-5-esp32-usbhost/readme.md',
+                youtube: 'https://youtu.be/felg-JbUMr0'
             }
-        </script>
-        <div class="highlight"></div>
-    </section>
-    <section id="work">
-        <div class="portfolio">
-            #1 OCPP Server
-            <div style="display: flex">
-                <div class="highlight"></div>
-                <div class="gray"></div>
-            </div>
-            <span class="description">Our OCPP server stands at the forefront of innovative energy solutions, seamlessly
-                connecting Electric Vehicle Supply Equipment (EVSE) chargers, eBike chargers, and a variety of
-                comparable devices. Through the Open Charge Point Protocol (OCPP), our platform empowers users to
-                effortlessly access and utilize these charging facilities. Furthermore, it streamlines payment
-                processes, allowing for the seamless collection of fees for services rendered. This integration not only
-                facilitates a user-friendly experience but also opens doors for businesses and applications to provide
-                enhanced services and effortlessly connect with payment systems, contributing to a sustainable and
-                connected future of energy and mobility.</span>
-        </div>
+        ];
 
-        <div class="portfolio">
-            #2 Fast Charge - DC up to 320 kW
-            <div style="display: flex; margin-bottom: 8px;">
-                <div class="highlight"></div>
-                <div class="gray"></div>
-            </div>
-            <img src="./image/dc-charger.jpg" width="100%" />
-            <span class="description">I am proud to showcase my expertise in developing a cutting-edge hardware and
-                software ecosystem for Fintel, a prominent client in the electric vehicle (EV) industry. The project
-                involved designing and implementing all essential components to construct a Fast DC charger tailored for
-                EVs, featuring a highly flexible power configuration spanning from 60 kW to an impressive 320 kW. What
-                sets this innovation apart is its colossal display, strategically integrated to showcase advertisements.
-                This innovative business model combines advertisement display with charging capabilities, presenting a
-                unique and pioneering approach within the EV charging market. This project exemplifies my dedication to
-                driving innovation and delivering solutions that transcend traditional boundaries in the electrified
-                transportation sector.</span>
-        </div>
+        const galleryGrid = document.getElementById('galleryGrid');
+        const modal = document.getElementById('detailModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDate = document.getElementById('modalDate');
+        const modalPage = document.getElementById('modalPage');
+        const modalYoutube = document.getElementById('modalYoutube');
 
-        <div class="portfolio">
-            #3 e-Bike Charger
-            <div style="display: flex;margin-bottom: 8px;">
-                <div class="highlight"></div>
-                <div class="gray"></div>
-            </div>
-            <img src="./image/ebike-charger.jpg" width="100%" />
-            <span class="description">In addition to revolutionizing the electric vehicle (EV) charging landscape, our
-                innovation extends to the realm of eBikes. Our integrated ecosystem seamlessly incorporates eBike
-                chargers utilizing the same robust infrastructure as the EV chargers. This intuitive system allows users
-                to effortlessly pay and plug in to charge their eBikes. Notably, our design boasts a remarkably simple
-                setup—merely requiring the addition of a compact box and an internet connection, with no need for
-                extensive construction modifications. With the burgeoning installation of power plugs in bicycle
-                infrastructures to support long-range eBike journeys, our solution stands as a cost-effective enabler,
-                reinforcing sustainable infrastructure for a greener future.</span>
-        </div>
+        const openModal = (piece) => {
+            modalImage.src = piece.image;
+            modalImage.alt = piece.title;
+            modalTitle.textContent = piece.title;
+            modalDate.textContent = new Date(piece.date + 'T00:00:00').toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+            modalPage.href = piece.page;
+            modalYoutube.style.display = piece.youtube ? 'inline-flex' : 'none';
+            if (piece.youtube) {
+                modalYoutube.href = piece.youtube;
+            }
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lock-scroll');
+        };
 
-        <div class="portfolio">
-            #4 Bi-Directional Charging System
-            <div style="display: flex">
-                <div class="highlight"></div>
-                <div class="gray"></div>
-            </div>
-            <span class="description">Our ongoing research project focuses on the development of an in-house module to
-                facilitate a bi-directional charging system for Electric Vehicles (EVs). The EV, equipped with a
-                formidable 60 kW battery, possesses the capacity to power an average household for up to two weeks
-                without requiring a recharge. This breakthrough redefines the conventional perception of a car,
-                transforming it into a mobile energy storage unit. Our research aims to unlock this potential and
-                harness the concept of EVs as movable energy reservoirs, paving the way for an innovative and
-                sustainable approach to energy consumption and distribution</span>
-        </div>
+        const closeModal = () => {
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lock-scroll');
+        };
 
-        <div class="highlight"></div>
-    </section>
+        pieces.forEach((piece, index) => {
+            const card = document.createElement('article');
+            card.className = 'gallery__card';
+            card.innerHTML = `
+                <div class="gallery__image-wrap">
+                    <img src="${piece.image}" alt="${piece.title}">
+                    <span class="gallery__date">${piece.date}</span>
+                    <span class="gallery__hint">Open</span>
+                </div>
+                <div class="gallery__meta">
+                    <p class="gallery__index">#${String(index + 1).padStart(2, '0')}</p>
+                    <h3>${piece.title}</h3>
+                    <p class="gallery__cta">Tap for project links</p>
+                </div>
+            `;
+            card.addEventListener('click', () => openModal(piece));
+            galleryGrid.appendChild(card);
+        });
 
+        modal.addEventListener('click', (event) => {
+            if (event.target.dataset.close !== undefined || event.target === modal) {
+                closeModal();
+            }
+        });
 
-    <section id="contact">
-        <span>Un Kyu Lee</span>
-        <span>unkyulee@gmail.com</span>
-    </section>
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
