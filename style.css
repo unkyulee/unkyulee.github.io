@@ -230,6 +230,9 @@ h1 {
   overflow: hidden;
   box-shadow: var(--shadow);
   z-index: 1;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__image {
@@ -241,6 +244,10 @@ h1 {
 
 .modal__body {
   padding: 18px 20px 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .modal__description {
@@ -265,6 +272,7 @@ h1 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  padding: 10px 0 6px;
 }
 
 .modal__links a {
@@ -316,5 +324,19 @@ h1 {
 
   .gallery__timeline-label {
     left: 12px;
+  }
+
+  .modal__content {
+    margin: 12px;
+    max-height: 88vh;
+  }
+
+  .modal__image {
+    max-height: 40vh;
+  }
+
+  .modal__close {
+    top: 8px;
+    right: 8px;
   }
 }
