@@ -3,15 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Un Kyu Lee</title>
-    <link
-        rel="stylesheet"
-        href="./style.css"
-    >
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -27,27 +21,15 @@
     </header>
 
     <main>
-        <section
-            class="gallery"
-            id="gallery"
-        >
+        <section class="gallery" id="gallery">
             <div class="gallery__timeline-label">2024 → 2025</div>
-            <div
-                class="gallery__grid"
-                id="galleryGrid"
-            ></div>
+            <div class="gallery__grid" id="galleryGrid"></div>
         </section>
     </main>
 
-    
 
-    <section
 
-        class="footer"
-
-        id="contact"
-
-    >
+    <section class="footer" id="contact">
 
         <div>
 
@@ -55,49 +37,26 @@
 
             <p class="lede">
 
-                <a
-
-                    href="https://www.tindie.com/stores/unkyulee/"
-
-                    target="_blank"
-
-                    rel="noopener"
-
-                >Tindie Online Store</a>
+                <a href="https://www.tindie.com/stores/unkyulee/" target="_blank" rel="noopener">Tindie Online Store</a>
 
             </p>
 
             <p class="lede">
 
-                <a
-
-                    href="https://www.youtube.com/@unkyulee"
-
-                    target="_blank"
-
-                    rel="noopener"
-
-                >YouTube - @unkyulee</a>
+                <a href="https://www.youtube.com/@unkyulee" target="_blank" rel="noopener">YouTube - @unkyulee</a>
 
             </p>
 
-            
+
 
             <p class="lede">
 
-                <a
-
-                    href="https://www.reddit.com/user/Background_Ad_1810/"
-
-                    target="_blank"
-
-                    rel="noopener"
-
-                >Reddit - Background_Ad_1810</a>
+                <a href="https://www.reddit.com/user/Background_Ad_1810/" target="_blank" rel="noopener">Reddit -
+                    Background_Ad_1810</a>
 
             </p>
 
-            
+
 
         </div>
 
@@ -105,50 +64,19 @@
 
 
 
-    <div
-        class="modal"
-        id="detailModal"
-        aria-hidden="true"
-    >
-        <div
-            class="modal__backdrop"
-            data-close
-        ></div>
+    <div class="modal" id="detailModal" aria-hidden="true">
+        <div class="modal__backdrop" data-close></div>
         <div class="modal__content">
-            <button
-                class="modal__close"
-                type="button"
-                data-close
-            >&times;</button>
-            <img
-                class="modal__image"
-                id="modalImage"
-                alt=""
-            >
+            <button class="modal__close" type="button" data-close>&times;</button>
+            <img class="modal__image" id="modalImage" alt="">
             <div class="modal__body">
-                
-                <p
-                    class="modal__date"
-                    id="modalDate"
-                ></p>
+
+                <p class="modal__date" id="modalDate"></p>
                 <h3 id="modalTitle"></h3>
-                <p
-                    class="modal__description"
-                    id="modalDescription"
-                ></p>
+                <p class="modal__description" id="modalDescription"></p>
                 <div class="modal__links">
-                    <a
-                        id="modalPage"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                    >Open project page</a>
-                    <a
-                        id="modalYoutube"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                    >Watch on YouTube</a>
+                    <a id="modalPage" href="#" target="_blank" rel="noopener">Open project page</a>
+                    <a id="modalYoutube" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
                 </div>
             </div>
         </div>
@@ -156,6 +84,14 @@
 
     <script>
         const pieces = [
+            {
+                title: 'The PDA Terminal',
+                date: '2025-12-16',
+                image: './image/pda.001.webp',
+                page: 'https://github.com/unkyulee/phone-enclosure',
+                youtube: null,
+                description: 'The fantasy of placing a keyboard down and letting it claim a moment, the time. You might be called a writer. Words gather and simply to exist. Waiting for you to call it out. Feels strange to open a book among friends, so why not unfold a typewriter at a dinner table. The eyes cling to words more easily than the mouth does. PDA, the need for a keyboard. Is the past more glorious than now, or am I living inside it, hands retracing a timeline that feels like it once promised perfection?'
+            },
             {
                 title: 'Rev.2.1 CyberDeck',
                 date: '2025-11-11',
