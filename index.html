@@ -29,6 +29,21 @@
 
 
 
+    <section class="comments" id="comments">
+        <div>
+            <p class="eyebrow">Visitor's Notes</p>
+            <a class="comments__link"
+                href="https://www.reddit.com/r/unkyulee/comments/1qbxg0v/welcome_to_un_kyu_lees_timeline/"
+                target="_blank" rel="noopener">Leave a note</a>
+            <div class="comments__panel">
+                <p class="comments__status" id="commentsStatus">Loading comments...</p>
+                <div class="comments__list" id="commentsList" hidden></div>
+            </div>
+            
+        </div>
+    </section>
+
+
     <section class="footer" id="contact">
 
         <div>
@@ -229,6 +244,68 @@
                 closeModal();
             }
         });
+
+        const commentsStatus = document.getElementById('commentsStatus');
+        const commentsList = document.getElementById('commentsList');
+        const commentsEndpoint = 'https://www.reddit.com/r/unkyulee/comments/1qbxg0v/welcome_to_un_kyu_lees_timeline.json?raw_json=1';
+
+        const formatTime = (unix) => {
+            const date = new Date(unix * 1000);
+            return date.toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        };
+
+        const decodeHtml = (htmlString) => {
+            const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+            return doc.body.innerHTML;
+        };
+
+        const renderComments = (comments) => {
+            commentsList.innerHTML = '';
+            comments.forEach((comment) => {
+                const item = document.createElement('article');
+                item.className = 'comment';
+                item.innerHTML = `
+                    <div class="comment__meta">
+                        <span class="comment__author">u/${comment.author}</span>
+                        <span class="comment__dot">•</span>
+                        <span class="comment__date">${formatTime(comment.created_utc)}</span>
+                        <span class="comment__dot">•</span>
+                        <span class="comment__score">${comment.score} points</span>
+                    </div>
+                    <div class="comment__body">${decodeHtml(comment.body_html || '')}</div>
+                `;
+                commentsList.appendChild(item);
+            });
+        };
+
+        const loadComments = async () => {
+            try {
+                const response = await fetch(commentsEndpoint);
+                if (!response.ok) {
+                    throw new Error('Failed to load comments.');
+                }
+                const payload = await response.json();
+                const commentNodes = payload?.[1]?.data?.children || [];
+                const comments = commentNodes
+                    .map((node) => node.data)
+                    .filter((data) => data && data.body);
+                if (comments.length === 0) {
+                    commentsStatus.textContent = 'No comments yet. Be the first to post on Reddit.';
+                    return;
+                }
+                commentsStatus.remove();
+                commentsList.hidden = false;
+                renderComments(comments.slice(0, 12));
+            } catch (error) {
+                commentsStatus.textContent = 'Could not load comments. Open the thread on Reddit instead.';
+            }
+        };
+
+        loadComments();
     </script>
 </body>
 
