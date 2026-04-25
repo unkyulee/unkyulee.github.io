@@ -196,6 +196,28 @@ h1 {
   background: rgba(0, 0, 0, 0.2);
 }
 
+.footer > div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tindie-badge {
+  display: inline-flex;
+  margin-top: 28px;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.tindie-badge:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.tindie-badge img {
+  display: block;
+  width: 200px;
+  height: 104px;
+}
+
 .comments {
   padding: 36px 24px 80px;
   text-align: center;
