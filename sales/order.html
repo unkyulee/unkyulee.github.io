@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="이메일로 Micro Journal 주문 내용을 확인합니다.">
+    <title>주문 내용 확인 — Micro Journal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <script src="order.js" defer></script>
+  </head>
+  <body class="check-body">
+    <main class="check-page">
+      <a class="check-brand" href="index.html">← Micro Journal</a>
+      <aside id="public-message" class="public-notice" aria-label="공지사항" hidden></aside>
+      <section class="check-panel" aria-labelledby="check-title">
+        <p class="eyebrow">Waiting List</p>
+        <h1 id="check-title">주문 내용 확인</h1>
+        <p class="check-intro">등록할 때 사용한 이메일 주소를 입력하면 같은 이메일로 등록한 모든 제품을 확인할 수 있습니다.</p>
+        <form id="lookup-form" class="lookup-form">
+          <label for="lookup-email">이메일 주소</label>
+          <div class="lookup-row">
+            <input id="lookup-email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+            <button class="button submit-button" type="submit">조회하기</button>
+          </div>
+        </form>
+        <p id="lookup-status" class="lookup-status" role="status"></p>
+        <div id="reservation-results" class="reservation-results" aria-live="polite"></div>
+      </section>
+    </main>
+  </body>
+</html>
