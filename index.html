@@ -3,9 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
     <title>Un Kyu Lee</title>
-    <link rel="stylesheet" href="./style.css">
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 </head>
 
 <body>
@@ -21,39 +27,65 @@
     </header>
 
     <main>
-        <section class="gallery" id="gallery">
+        <section
+            class="gallery"
+            id="gallery"
+        >
             <div class="gallery__timeline-label">2024 → 2026</div>
-            <div class="gallery__grid" id="galleryGrid"></div>
+            <div
+                class="gallery__grid"
+                id="galleryGrid"
+            ></div>
         </section>
     </main>
 
 
 
-    <section class="comments" id="comments">
+    <section
+        class="comments"
+        id="comments"
+    >
         <div>
             <p class="eyebrow">Visitor's Notes</p>
-            <a class="comments__link"
+            <a
+                class="comments__link"
                 href="https://www.reddit.com/r/unkyulee/comments/1qbxg0v/welcome_to_un_kyu_lees_timeline/"
-                target="_blank" rel="noopener">Leave a note to Un Kyu Lee</a>
+                target="_blank"
+                rel="noopener"
+            >Leave a note to Un Kyu Lee</a>
             <div class="comments__panel">
-                <p class="comments__status" id="commentsStatus">Loading comments...</p>
-                <div class="comments__list" id="commentsList" hidden></div>
+                <p
+                    class="comments__status"
+                    id="commentsStatus"
+                >Loading comments...</p>
+                <div
+                    class="comments__list"
+                    id="commentsList"
+                    hidden
+                ></div>
             </div>
-            
+
         </div>
     </section>
 
 
-    <section class="footer" id="contact">
+    <section
+        class="footer"
+        id="contact"
+    >
 
         <div>
 
             <p class="eyebrow">Contact</p>
 
- 
+
             <p class="lede">
 
-                <a href="https://www.youtube.com/@unkyulee" target="_blank" rel="noopener">YouTube - @unkyulee</a>
+                <a
+                    href="https://www.youtube.com/@unkyulee"
+                    target="_blank"
+                    rel="noopener"
+                >YouTube - @unkyulee</a>
 
             </p>
 
@@ -61,16 +93,27 @@
 
             <p class="lede">
 
-                <a href="https://www.reddit.com/r/unkyulee/" target="_blank" rel="noopener">Reddit -
+                <a
+                    href="https://www.reddit.com/r/unkyulee/"
+                    target="_blank"
+                    rel="noopener"
+                >Reddit -
                     Un Kyu Lee's Timeline</a>
 
             </p>
 
-            <a class="tindie-badge"
+            <a
+                class="tindie-badge"
                 href="https://www.tindie.com/stores/unkyulee/?ref=offsite_badges&utm_source=sellers_unkyulee&utm_medium=badges&utm_campaign=badge_large"
-                target="_blank" rel="noopener">
-                <img src="https://static.tindie.com/badges/tindie-larges.png" alt="I sell on Tindie" width="200"
-                    height="104">
+                target="_blank"
+                rel="noopener"
+            >
+                <img
+                    src="https://static.tindie.com/badges/tindie-larges.png"
+                    alt="I sell on Tindie"
+                    width="200"
+                    height="104"
+                >
             </a>
 
 
@@ -81,19 +124,50 @@
 
 
 
-    <div class="modal" id="detailModal" aria-hidden="true">
-        <div class="modal__backdrop" data-close></div>
+    <div
+        class="modal"
+        id="detailModal"
+        aria-hidden="true"
+    >
+        <div
+            class="modal__backdrop"
+            data-close
+        ></div>
         <div class="modal__content">
-            <button class="modal__close" type="button" data-close>&times;</button>
-            <img class="modal__image" id="modalImage" alt="">
+            <button
+                class="modal__close"
+                type="button"
+                data-close
+            >&times;</button>
+            <img
+                class="modal__image"
+                id="modalImage"
+                alt=""
+            >
             <div class="modal__body">
 
-                <p class="modal__date" id="modalDate"></p>
+                <p
+                    class="modal__date"
+                    id="modalDate"
+                ></p>
                 <h3 id="modalTitle"></h3>
-                <p class="modal__description" id="modalDescription"></p>
+                <p
+                    class="modal__description"
+                    id="modalDescription"
+                ></p>
                 <div class="modal__links">
-                    <a id="modalPage" href="#" target="_blank" rel="noopener">Open project page</a>
-                    <a id="modalYoutube" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+                    <a
+                        id="modalPage"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >Open project page</a>
+                    <a
+                        id="modalYoutube"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >Watch on YouTube</a>
                 </div>
             </div>
         </div>
@@ -102,11 +176,19 @@
     <script>
         const pieces = [
             {
+                title: 'cyberDeck with MINIS12',
+                date: '2026-10-26',
+                image: './image/cyberDeck.001.png',
+                page: 'https://github.com/unkyulee/cyberDeck',
+                youtube: "https://youtu.be/EUU2UdWa4cw",
+                description: "Desire to create meets the love of music. What's pity for lack of talent. What I play like music is a ridicule to my daughter. And yet, there I am. Putting on my headphones, pressing the keys, and losing myself in sounds that seem to make sense only to me. I dare not record it. Because listening to it afterward is remembering a drunken night. What felt wonderful at the time becomes a rather embarrassing memory the next morning. A little shame. And a suspicion that my daughter was right. Still, I put my headphones back on."
+            },
+            {
                 title: 'Rev.8 Melodica',
                 date: '2026-06-18',
                 image: './image/rev.8.001.png',
                 page: 'https://github.com/unkyulee/micro-journal/tree/main/micro-journal-rev-8',
-                youtube: "",
+                youtube: "https://youtu.be/VGHCE0Egx4Q",
                 description: "A thought arrives, and a flick of switch. One second later. Keys awaits with their own possible combinations. Under sunlight, the screen does not retreat. It gathers brightness and gives the words back. Your text can be carried, sent, synced, or kept in ten. Nothing tries to become louder than the writing. It is only a compact opening, built for the moment."
             },
             {
