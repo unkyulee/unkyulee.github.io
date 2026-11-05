@@ -176,8 +176,16 @@
     <script>
         const pieces = [
             {
-                title: 'cyberDeck with MINIS12',
-                date: '2026-10-26',
+                title: 'Rev.2.1.mini',
+                date: '2026-10-23',
+                image: './image/rev.2.mini.002.png',
+                page: 'https://github.com/unkyulee/micro-journal',
+                youtube: "https://youtu.be/Nw3Djnw7wN0",
+                description: "It is a cool build. But would you be able to handle it? Is it a good design if it inspires the designer? Or should it inspire the writer? This time, the design seems to attract more makers than writers. I miss the writers, and the exchanges we used to have. Their dreamy versions of words, filled with emotions and excitement. Chaotic, and polite. Those conversations where words wanders. I have been designing too much for the eyes, and not enough for the words."
+            },
+            {
+                title: 'cyberDeck with Beelink MINIS12',
+                date: '2026-10-20',
                 image: './image/cyberDeck.001.png',
                 page: 'https://github.com/unkyulee/cyberDeck',
                 youtube: "https://youtu.be/EUU2UdWa4cw",
@@ -339,6 +347,7 @@
             if (piece.youtube) {
                 modalYoutube.href = piece.youtube;
             }
+            modal.querySelector('.modal__content').scrollTop = 0;
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('lock-scroll');
         };
